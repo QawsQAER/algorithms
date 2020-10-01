@@ -8,7 +8,7 @@ namespace sorting {
 
 class MergeSort: public Sort {
   public: 
-    void Run(std::vector<int>& input);
+    void Run(std::vector<int>* input);
 };
 
 } // sorting

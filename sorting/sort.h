@@ -7,7 +7,7 @@ namespace sorting {
 // The interface for running sorting algorithm.
 class Sort {
   public:
-    virtual void Run(std::vector<int>& input) = 0;
+    virtual void Run(std::vector<int>* input) = 0;
 };
 
 } // sorting

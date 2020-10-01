@@ -9,16 +9,29 @@ cc_library(
 )
 
 cc_library(
+  name = "radix_sort",
+  srcs = ["radix_sort.cc"],
+  hdrs = ["radix_sort.h"],
+  deps = [
+    ":sort", 
+  ],
+)
+
+cc_library(
   name = "sort",
   hdrs = ["sort.h"],
 )
 
 cc_test(
-  name = "merge_sort_test",
-  srcs = ["merge_sort_test.cc"],
+  name = "sort_test",
+  srcs = ["sort_test.cc"],
   copts = ["-Iexternal/gtest/include"],
   deps = [
       "@gtest//:gtest_main",
+      "@com_google_absl//absl/random",
+      "@com_google_absl//absl/time",
+      "@com_google_absl//absl/algorithm:container",
+      "@glog//:glog",
       ":merge_sort",
   ],
 )
