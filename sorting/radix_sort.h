@@ -8,7 +8,7 @@ namespace algorithm {
 namespace sorting {
 
 class RadixSort: public Sort {
-  public:
+ public:
     void Run(std::vector<int>* input);
 };
 

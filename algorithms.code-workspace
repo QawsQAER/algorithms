@@ -82,7 +82,18 @@
 			"vector": "cpp",
 			"hash_map": "cpp",
 			"hash_set": "cpp",
-			"*.inc": "cpp"
-		}
+			"*.inc": "cpp",
+			"random": "cpp",
+			"valarray": "cpp",
+			"cfenv": "cpp",
+			"clocale": "cpp",
+			"condition_variable": "cpp",
+			"csignal": "cpp",
+			"future": "cpp",
+			"numeric": "cpp",
+			"scoped_allocator": "cpp",
+			"thread": "cpp",
+			"typeindex": "cpp"
+		},
 	}
 }

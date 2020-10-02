@@ -1,12 +1,14 @@
 #ifndef ALGORITHMS_SORTING_SORT_H
 #define ALGORITHMS_SORTING_SORT_H
 
+#include <vector>
+
 namespace algorithm {
 namespace sorting {
-  
+
 // The interface for running sorting algorithm.
 class Sort {
-  public:
+ public:
     virtual void Run(std::vector<int>* input) = 0;
 };
 
