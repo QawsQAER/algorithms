@@ -23,7 +23,8 @@ cc_library(
   srcs = ["quick_sort.cc"],
   hdrs = ["quick_sort.h"],
   deps = [
-    ":sort",       
+    ":sort",  
+    "@com_google_absl//absl/random",
     "@glog//:glog",
   ],
 )

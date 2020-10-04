@@ -26,23 +26,25 @@ int Partition(std::vector<int>* input, int p, int r) {
   return (left_end + 1);
 }
 
-void InternalQuickSort(std::vector<int>* input, int p, int r) {
-  // LOG(INFO) << "input: " << (*input) << ", p:" << p << ", r:" << r;
-  if (p == r) {
-    return;
-  }
-  int q = Partition(input, p, r);
-  if (q > p) {
-    InternalQuickSort(input, p, q - 1);
-  }
-  if (r > q) {
-    InternalQuickSort(input, q + 1, r);
-  }
+int QuickSort::RandomPartition(std::vector<int>* input, int p, int r) {
+  int pivot_idx = absl::Uniform(bitgen, p, r);
+  int num = (*input)[pivot_idx];
+  (*input)[pivot_idx] = (*input)[r];
+  (*input)[r] = num;
+  return Partition(input, p, r);
 }
-void QuickSort::Run(std::vector<int>* input) {
-  if (input->size() == 0) {
+
+void QuickSort::InternalQuickSort(std::vector<int>* input, int p, int r) {
+  LOG(INFO) << (*input) << ", p:" << p << ", r:" << r;
+  if (p >= r) {
     return;
   }
+  int q = RandomPartition(input, p, r);
+  InternalQuickSort(input, p, q - 1);
+  InternalQuickSort(input, q + 1, r);
+}
+
+void QuickSort::Run(std::vector<int>* input) {
   InternalQuickSort(input, 0, input->size() - 1);
   return;
 }
