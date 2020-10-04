@@ -19,6 +19,16 @@ cc_library(
 )
 
 cc_library(
+  name = "quick_sort",
+  srcs = ["quick_sort.cc"],
+  hdrs = ["quick_sort.h"],
+  deps = [
+    ":sort",       
+    "@glog//:glog",
+  ],
+)
+
+cc_library(
   name = "radix_sort",
   srcs = ["radix_sort.cc"],
   hdrs = ["radix_sort.h"],
@@ -39,6 +49,7 @@ cc_test(
   deps = [
       ":merge_sort",
       ":heap_sort",
+      ":quick_sort",
       "@gtest//:gtest_main",
       "@com_google_absl//absl/random",
       "@com_google_absl//absl/time",
